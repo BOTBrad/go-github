@@ -267,6 +267,7 @@ func (c *Client) NewRequest(method, urlStr string, body interface{}) (*http.Requ
 	if c.UserAgent != "" {
 		req.Header.Set("User-Agent", c.UserAgent)
 	}
+	req.Header.Set("Cache-Control", "max-age=0")
 	return req, nil
 }
 
